@@ -4,7 +4,7 @@ import ProtectedRoute from "./ProtectedRoute/ProtectedRoute"; // Importing the P
 import AddItems from "./Pages/AddItems/AddItems"; // Importing AddItems page
 import Login from "./Pages/Login/Login"; // Importing Login page
 import Signup from "./Pages/SignUp/SignUp"; // Importing Signup page
-import FoodList from "./Pages/FoodList/foodList"; // Importing FoodList page
+import FoodList from "./Pages/FoodList/"; // Importing FoodList page
 
 const App = () => {
   return (
