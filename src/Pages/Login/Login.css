@@ -1,0 +1,29 @@
+.auth-container {
+    width: 300px;
+    margin: 80px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid gray;
+  }
+  .auth-container input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+  }
+  .auth-container button {
+    padding: 10px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-up{
+    color: blue;
+    cursor: pointer;
+    text-align: left;
+    margin: 10px;
+  }

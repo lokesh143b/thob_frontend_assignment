@@ -1,0 +1,92 @@
+.food-list-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .food-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .food-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .food-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .food-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .food-details {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .food-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .food-description {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .food-price {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .food-category {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+  }
+  
+  .food-list-container p {
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+/* Add Food Button Styling */
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  button:active {
+    background-color: #388e3c; /* Even darker green when clicked */
+  }
+  
