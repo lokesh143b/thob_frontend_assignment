@@ -11,6 +11,8 @@ const FoodList = () => {
   const [error, setError] = useState(null); // Stores any error messages
   const { backend_url } = useContext(AppContext); // Access the backend URL from context
   const navigate = useNavigate(); // Hook to navigate programmatically
+  const token = Cookies.get("token");
+
 
   // Fetch the food list when the component mounts
   useEffect(() => {
@@ -19,6 +21,9 @@ const FoodList = () => {
         // Send GET request to fetch food list
         const response = await fetch(backend_url + "/food/list", {
           method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         });
 
         const data = await response.json(); // Parse the response JSON

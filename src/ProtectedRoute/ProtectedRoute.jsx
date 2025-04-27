@@ -7,6 +7,7 @@ import Cookies from "js-cookie"; // Importing js-cookie to access cookies
 const ProtectedRoute = ({ children }) => {
   // Retrieve the 'token' from cookies to check if the user is authenticated
   const token = Cookies.get("token");
+  
 
   // If there is no token or if the token is 'undefined', the user is not authenticated
   if (!token || token === "undefined") {

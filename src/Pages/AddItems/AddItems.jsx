@@ -18,6 +18,7 @@ const AddItems = () => {
   const { backend_url } = useContext(AppContext); // Get backend URL from context
   const [isLoaderActive, setIsLoaderActive] = useState(false); // State to manage loading spinner
   const navigate = useNavigate(); // Use navigate hook for redirecting after submission
+  const token = Cookies.get("token");
 
   // Cleanup image URL on unmount
   useEffect(() => {
@@ -58,6 +59,9 @@ const AddItems = () => {
       setIsLoaderActive(true); // Show loader
       const response = await fetch(url, {
         method: "POST", // Send POST request with form data
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         body: formData,
       });
 
@@ -80,7 +84,10 @@ const AddItems = () => {
         // Handle errors if response is not OK
         const errorData = await response.json();
         setIsLoaderActive(false);
-        console.error("Failed to add item:", errorData.message || "Unknown error");
+        console.error(
+          "Failed to add item:",
+          errorData.message || "Unknown error"
+        );
         alert(`Failed to add item: ${errorData.message || "Unknown error"}`);
       }
     } catch (error) {
@@ -94,18 +101,17 @@ const AddItems = () => {
   return (
     <form onSubmit={submitForm} className="add-items-container">
       <ToastContainer /> {/* Toast notifications container */}
-
       {/* Loader Spinner when form is submitting */}
       {isLoaderActive ? (
         <div className="add-item-loader-container">
           <div className="loader-container">
-            <div className="circular-loader"></div> {/* Circular loading spinner */}
+            <div className="circular-loader"></div>{" "}
+            {/* Circular loading spinner */}
           </div>
         </div>
       ) : (
         ""
       )}
-
       {/* Image upload section */}
       <div className="image-upload">
         <label htmlFor="ImageUpload">
@@ -123,7 +129,6 @@ const AddItems = () => {
           onChange={handleImageChange} // Handle image change
         />
       </div>
-
       {/* Product name input */}
       <div className="product-name">
         <label htmlFor="ProductName">Product name</label>
@@ -136,7 +141,6 @@ const AddItems = () => {
           required
         />
       </div>
-
       {/* Product description textarea */}
       <div className="product-description">
         <label htmlFor="ProductDescription">Product description</label>
@@ -148,7 +152,6 @@ const AddItems = () => {
           required
         ></textarea>
       </div>
-
       {/* Product category and price section */}
       <div className="product-cat-price">
         <div>
@@ -184,7 +187,6 @@ const AddItems = () => {
           />
         </div>
       </div>
-
       {/* Submit button to add product */}
       <button type="submit" className="product-add">
         ADD

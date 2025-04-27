@@ -8,7 +8,8 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
 
   // Define the backend URL where the API is hosted
-  const backend_url = "https://thob-backend-assignment.onrender.com";
+  // const backend_url = "https://thob-backend-assignment.onrender.com";
+  const backend_url = "http://www.localhost:4000"
 
   // The context provider makes the backend_url available to all child components
   return (
